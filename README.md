@@ -1,4 +1,4 @@
-# Rio Site
+# Luna Site
 
 The MIT License (MIT)
 
