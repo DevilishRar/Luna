@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna Store</title>
+    <link rel="icon" href="https://media.discordapp.net/attachments/1223176100822253648/1267527785669197834/Preview.png?ex=66a91cbd&is=66a7cb3d&hm=6a88e3204ae894c926415fecea8c5be9b8a6f6ba033be00eb222aea726b5c1d2&=&format=webp&quality=lossless">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function generateStars(count) {
+            const starsContainer = document.getElementById('stars');
+            starsContainer.innerHTML = '';
+            for (let i = 0; i < count; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 200 + 'vh';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        function adjustWidth() {
+            const navbar = document.querySelector('.navbar');
+            const maxWidth = getComputedStyle(navbar).maxWidth;
+            const elements = document.querySelectorAll('.container, .main-content, .section, .features-cards, .showcases-cards, footer');
+            elements.forEach(element => {
+                element.style.maxWidth = maxWidth;
+            });
+        }
+
+        window.onload = () => {
+            document.body.classList.add('fade-in');
+            generateStars(300);
+            adjustWidth();
+        }
+
+        window.onresize = adjustWidth;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.style.overflow = 'scroll';
+        });
+
+        function debugToggle(command) {
+            if (command === 'debugmode.on.test') {
+                console.log('Debug mode is now ON.');
+                debugMode = true;
+            } else if (command === 'debugmode.off.test') {
+                console.log('Debug mode is now OFF.');
+                debugMode = false;
+            } else {
+                console.log('Invalid command.');
+            }
+        }
+
+        let debugMode = false;
+
+        function openBillingForm(productId) {
+            if (productId === 'price_LunaStandard') {
+                window.location.href = 'https://lunaserverside.mysellix.io/checkout';
+            }
+        }
+
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                const command = prompt('Enter debug command:');
+                debugToggle(command);
+            }
+        });
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        @font-face {
+            font-family: 'Bernie';
+            src: url('MODERNIZ900.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'Gotham';
+            font-weight: bold;
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/gotham/1.0/gotham-bold.otf') format('opentype');
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+        #stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+        .star {
+            position: absolute;
+            width: 3.7px;
+            height: 3.7px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #fff;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                opacity: 0.5;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .navbar {
+            background-color: #111;
+            border-radius: 1rem;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 1500px;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #4c1d95;
+        }
+        .btn-discord {
+            background-color: transparent;
+            border: 1px solid #4c1d95;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 9999px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-discord:hover {
+            background-color: #4c1d95;
+            color: #fff;
+        }
+        .main-content {
+            text-align: center;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1500px;
+            margin: 0 auto;
+            transition: opacity 2s ease-in;
+            height: 28vh;
+        }
+        .main-content .main-title {
+            font-family: 'Bernie', sans-serif;
+            background: linear-gradient(90deg, #4c1d95, #2d1b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 3s infinite;
+            text-shadow: 0 0 20px rgba(76, 29, 149, 0.5);
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-purchase-now {
+            background-color: #4c1d95;
+            color: #fff;
+            cursor: pointer;
+        }
+        .btn-purchase-now:hover {
+            background-color: #2d1b6b;
+            color: #fff;
+        }
+        .btn-showcases {
+            background-color: transparent;
+            border: 1px solid #4c1d95;
+            color: #4c1d95;
+        }
+        .btn-showcases:hover {
+            background-color: #4c1d95;
+            color: #fff;
+        }
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+        .section .card {
+            display: inline-block;
+            width: 250px;
+            background-color: #111;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 20px;
+            height: 360px;
+            transition: transform 0.3s, background-color 0.3s;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .section .card:hover {
+            transform: translateY(-10px);
+            background-color: #222;
+        }
+        .section .card h3 {
+            font-family: 'Gotham', sans-serif;
+            background: linear-gradient(90deg, #4c1d95, #2d1b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section .card p {
+            color: #888;
+        }
+        .section .card img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .section .card button {
+            background-color: #4c1d95;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 9999px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .section .card button:hover {
+            background-color: #2d1b6b;
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 20px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div id="stars" style="z-index: -1;"></div>
+    <div class="container">
+        <nav class="navbar">
+            <div class="flex items-center">
+                <img src="https://media.discordapp.net/attachments/1261378048284950600/1266763146694099135/Preview.gif?ex=66a8f79d&is=66a7a61d&hm=f5a2933dd8bb01e11befce50cb541fc95b96888a8a4a92974f1b1b5b8d4d5a08&=" alt="Luna Logo" class="h-10 w-10 rounded-lg">
+            </div>
+            <div class="flex items-center">
+                <a href="index.html">Home</a>
+                <a href="https://discord.gg/serversides" target="_blank">Services</a>
+            </div>
+            <div>
+                <a href="https://discord.gg/serversides" target="_blank" class="btn-discord">Discord</a>
+            </div>
+        </nav>
+
+        <header class="main-content fade-in" id="home">
+            <div>
+                <h1 class="text-5xl font-bold main-title">Welcome to the #1 ROBLOX Serverside on the market!</h1>
+            </div>
+        </header>
+
+        <section class="section features-cards">
+            <div class="flex justify-center items-start flex-wrap">
+                <div class="card">
+                    <h3>Luna Standard</h3>
+                    <p>Price: $15</p>
+                    <img src="https://media.discordapp.net/attachments/1261378048284950600/1266763146694099135/Preview.gif?ex=66a8f79d&is=66a7a61d&hm=f5a2933dd8bb01e11befce50cb541fc95b96888a8a4a92974f1b1b5b8d4d5a08&=" alt="Luna Standard">
+                    <button onclick="openBillingForm('price_LunaStandard')">Purchase</button>
+                </div>
+                <div class="card">
+                    <h3>Luna Premium</h3>
+                    <p>COMING SOON...</p>
+                    <img src="https://media.discordapp.net/attachments/1261378048284950600/1266763146694099135/Preview.gif?ex=66a8f79d&is=66a7a61d&hm=f5a2933dd8bb01e11befce50cb541fc95b96888a8a4a92974f1b1b5b8d4d5a08&=" alt="Luna Premium">
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Luna is an admin panel that allows our users to have administrative powers in supported games. We are NOT a cheat, exploit, or hacking software. Our Discord server follows all of Discord's Terms of Service and ROBLOX's Terms of Use.</p>
+        </footer>
+    </div>
+</body>
+</html>
