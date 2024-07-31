@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna - Terms of Service</title>
+    <link rel="icon" href="https://media.discordapp.net/attachments/1223176100822253648/1268143215564034058/Preview.png?ex=66ab59e7&is=66aa0867&hm=4e61f93474e1b0547303a1638ee6b09e61b7296afa50dae007973f0415af275e&=&format=webp&quality=lossless">
+    <meta name="theme-color" content="#4c1d95">
+    <meta property="og:title" content="Luna - Terms of Service">
+    <meta property="og:description" content="Terms of Service for Luna Serverside">
+    <meta property="og:image" content="https://media.discordapp.net/attachments/1223176100822253648/1268143215564034058/Preview.png?ex=66ab59e7&is=66aa0867&hm=4e61f93474e1b0547303a1638ee6b09e61b7296afa50dae007973f0415af275e&=&format=webp&quality=lossless">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function generateStars(count) {
+            const starsContainer = document.getElementById('stars');
+            starsContainer.innerHTML = '';
+            for (let i = 0; i < count; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 200 + 'vh';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        window.onload = () => {
+            generateStars(300);
+            document.body.style.overflow = 'scroll';
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        @font-face {
+            font-family: 'Bernie';
+            src: url('MODERNIZ900.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'Gotham';
+            font-weight: bold;
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/gotham/1.0/gotham-bold.otf') format('opentype');
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 3.7px;
+            height: 3.7px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #fff;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                opacity: 0.5;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        #stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar {
+            background-color: #111;
+            border-radius: 1rem;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 1500px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #4c1d95;
+        }
+
+        .btn-discord {
+            background-color: transparent;
+            border: 1px solid #4c1d95;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 9999px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn-discord:hover {
+            background-color: #4c1d95;
+            color: #fff;
+        }
+
+        .main-title {
+            font-family: 'Bernie', sans-serif;
+            font-size: 3rem;
+            background: linear-gradient(90deg, #4c1d95, #2d1b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            padding: 50px 20px;
+            text-align: left;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-family: 'Gotham', sans-serif;
+            font-size: 2rem;
+            color: #4c1d95;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4c1d95;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .section h3 {
+            font-family: 'Gotham', sans-serif;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4c1d95;
+            padding-left: 10px;
+            text-align: left;
+        }
+
+        .section p {
+            font-size: 1rem;
+            color: #bbb;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        footer {
+            padding: 50px 20px;
+            text-align: center;
+            color: #888;
+            background-color: transparent;
+            border-top: 2px solid #4c1d95;
+        }
+
+        footer .footer-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        footer .footer-links div {
+            text-align: left;
+        }
+
+        footer .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+
+        footer .footer-links a:hover {
+            color: #4c1d95;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .footer-text {
+            text-align: left;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="stars"></div>
+    <div class="container">
+        <nav class="navbar">
+            <div class="flex items-center">
+                <img src="https://media.discordapp.net/attachments/1261378048284950600/1266763146694099135/Preview.gif?ex=66aaf1dd&is=66a9a05d&hm=c4acbf303a5c05feb052658d4428aa534dde77b2c6da6b30afd4f98c4ba91d18&=" alt="Luna Logo" class="h-10 w-10 rounded-lg">
+            </div>
+            <div class="flex items-center">
+                <a href="index.html">Home</a>
+                <a href="https://discord.gg/serversides" target="_blank">Services</a>
+            </div>
+            <div>
+                <a href="https://discord.gg/serversides" target="_blank" class="btn-discord">Discord</a>
+            </div>
+        </nav>
+
+        <header class="section">
+            <h1 class="main-title fade-in">Terms of Service</h1>
+        </header>
+
+        <section class="section fade-in">
+            <h2>Service Agreement</h2>
+            <p>By purchasing our service, you agree to comply with the following rules and guidelines. You also understand that our staff reserves the right to revoke your access to our service at any time without prior notice if within reason.</p>
+            <p>The user understands that they must adhere to our Terms of Service and accepts that failure to comply with our rules will result in a blacklist and removal of access to our service.</p>
+            <p>Luna Serverside reserves the right to change, modify, and update the Terms of Service at any given time. Luna Serverside attempts their best to acknowledge any updates and notify users.</p>
+            <p>The user understands that their purchase of our service is solely intended to be used by them only and that their purchase cannot be transferred to another account, without prior notice or any valid visual proof.</p>
+            <p>Luna Serverside is not liable for any misinterpretation of our services; it is the user's sole responsibility to clarify any thoughts or queries with our team.</p>
+            <p>Luna Serverside reserves the right to modify, change, remove, or update our services at any time. This includes the removal of certain features or supported games.</p>
+            <p>The user accepts that Luna does not accept any refunds or purchases made for our services. Luna Serverside is not liable for accidental purchases of our services.</p>
+        </section>
+
+        <section class="section fade-in">
+            <h2>Blacklist Policy</h2>
+            <h3>No Mass-Killing of Players</h3>
+            <p>This harms the engagement of non-serversiding players within the server, in turn putting the infected ROBLOX experience at risk.</p>
+
+            <h3>No Mass-Kicking or Banning of Players</h3>
+            <p>This effectively kills the active player count of the infected ROBLOX experience, resulting in its servers being 'dead'.</p>
+
+            <h3>No Use of External Executors</h3>
+            <p>We do not endorse any external applications that breach ROBLOX's Terms of Use. Our Luna service is an internal product that is fully functional and permitted within our supported games.</p>
+
+            <h3>No Changing the Map</h3>
+            <p>Executing scripts that significantly alter the map in some shape or form critically harms the engagement of non-serversiding players within the server, in turn putting the infected ROBLOX experience at risk.</p>
+
+            <h3>No NSFW Scripts</h3>
+            <p>NSFW content and the use or distribution of condo scripts are strictly prohibited, as they could result in the game being banned. ROBLOX is targeted toward a young audience and therefore to respect their service, we do not permit such content.</p>
+
+            <h3>No Leaking Games or Snitching</h3>
+            <p>Do not leak or share any games or game content we provide. Regardless if done intentionally or not. This includes hinting or even suggesting that the game is supported. This also includes telling anybody that the game is infected or backdoored; this is strictly forbidden.</p>
+
+            <h3>No Profiting from Our Service</h3>
+            <p>Any attempts to profit from our service, without agreement, will not be tolerated. This includes but is not limited to stealing our supported games, player base, and service.</p>
+
+            <h3>No Running Commands on All Players</h3>
+            <p>Running or executing commands to all the players is not allowed; this harms the experience for others.</p>
+
+            <h3>No Reverse-Engineering Attempts at Our Service</h3>
+            <p>Do not attempt to reverse-engineer our service in any way; we own the service with all rights reserved.</p>
+
+            <h3>Common Sense</h3>
+            <p>We expect users to use common sense and not do anything that obviously harms the experience and/or serverside in any way.</p>
+
+            <p>For any serious inquiries or legal matters, please contact the Luna Support team by making a support ticket in our Discord Server.</p>
+        </section>
+    </div>
+</body>
+
+</html>
